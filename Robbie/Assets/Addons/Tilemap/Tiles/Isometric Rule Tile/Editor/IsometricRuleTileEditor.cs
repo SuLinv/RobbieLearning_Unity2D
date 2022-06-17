@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Reflection;
 using UnityEngine;
-
+/*
 namespace UnityEditor
 {
     [CustomEditor(typeof(IsometricRuleTile), true)]
@@ -118,3 +118,5 @@ namespace UnityEditor
         }
     }
 }
+
+*/
