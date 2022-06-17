@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BackGround
+    uniqueID: 214362001
+    locked: 0
+  - name: Platorms
+    uniqueID: 2106881025
+    locked: 0
+  - name: Player
+    uniqueID: 4121685531
+    locked: 0
+  - name: Front
+    uniqueID: 2997946277
+    locked: 0
