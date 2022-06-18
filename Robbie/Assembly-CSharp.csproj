@@ -45,10 +45,10 @@
      <Compile Include="Assets\_Extended\Scripts\FallingBlockCollision.cs" />
      <Compile Include="Assets\Scripts\FPS.cs" />
      <Compile Include="Assets\_Extended\Scripts\SwingAxe.cs" />
+     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\_Extended\Scripts\AutoSpikes.cs" />
      <Compile Include="Assets\Scripts\LightFlicker.cs" />
      <Compile Include="Assets\_Extended\Scripts\FallingBlock.cs" />
-     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <None Include="Assets\Addons\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\UI\Shaders\Fader.shader" />
      <None Include="Assets\Addons\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
