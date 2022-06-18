@@ -41,19 +41,19 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\_Extended\Scripts\SwingAxe.cs" />
-     <Compile Include="Assets\Addons\Tilemap\Tiles\Isometric Rule Tile\IsometricRuleTile.cs" />
-     <Compile Include="Assets\_Extended\Scripts\FallingBlockCollision.cs" />
-     <Compile Include="Assets\_Extended\Scripts\FallingBlock.cs" />
-     <Compile Include="Assets\Addons\Tilemap\Brushes\Tint Brush Smooth\Scripts\TintTextureGenerator.cs" />
-     <Compile Include="Assets\Addons\Tilemap\Tiles\Pipeline Tile\Scripts\PipelineTile.cs" />
-     <Compile Include="Assets\_Extended\Scripts\AutoSpikes.cs" />
-     <Compile Include="Assets\Addons\Tilemap\Tiles\Random Tile\Scripts\RandomTile.cs" />
-     <Compile Include="Assets\Addons\Tilemap\Tiles\Weighted Random Tile\WeightedRandomTile.cs" />
-     <Compile Include="Assets\Scripts\EmissionPulse.cs" />
      <Compile Include="Assets\Addons\Tilemap\Tiles\Terrain Tile\Scripts\TerrainTile.cs" />
-     <Compile Include="Assets\Scripts\LightFlicker.cs" />
+     <Compile Include="Assets\Scripts\EmissionPulse.cs" />
+     <Compile Include="Assets\_Extended\Scripts\FallingBlockCollision.cs" />
      <Compile Include="Assets\Scripts\FPS.cs" />
+     <Compile Include="Assets\_Extended\Scripts\SwingAxe.cs" />
+     <Compile Include="Assets\Addons\Tilemap\Tiles\Random Tile\Scripts\RandomTile.cs" />
+     <Compile Include="Assets\Addons\Tilemap\Tiles\Pipeline Tile\Scripts\PipelineTile.cs" />
+     <Compile Include="Assets\Addons\Tilemap\Brushes\Tint Brush Smooth\Scripts\TintTextureGenerator.cs" />
+     <Compile Include="Assets\_Extended\Scripts\AutoSpikes.cs" />
+     <Compile Include="Assets\Addons\Tilemap\Tiles\Isometric Rule Tile\IsometricRuleTile.cs" />
+     <Compile Include="Assets\Scripts\LightFlicker.cs" />
+     <Compile Include="Assets\_Extended\Scripts\FallingBlock.cs" />
+     <Compile Include="Assets\Addons\Tilemap\Tiles\Weighted Random Tile\WeightedRandomTile.cs" />
      <None Include="Assets\Addons\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\UI\Shaders\Fader.shader" />
      <None Include="Assets\Addons\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
