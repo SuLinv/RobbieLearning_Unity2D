@@ -71,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
             jumpPressed = true;
         }
 
-        if (Input.GetButton("Crouch"))
+        if (Input.GetButtonDown("Crouch"))
         {
             crouchPressed = true;
         }
@@ -181,6 +181,7 @@ public class PlayerMovement : MonoBehaviour
         isCrouch = false;
         coll.size = collStandSize;
         coll.offset = collStandOffset;
+        crouchPressed = false;
     }
 
     void MidAirMovement()

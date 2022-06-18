@@ -338,6 +338,9 @@
      <Reference Include="Newtonsoft.Json">
      <HintPath>D:\UnityProjects\RobbieLearning_Unity2D\Robbie\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
      </Reference>
+     <Reference Include="clipper_library">
+     <HintPath>D:\UnityProjects\RobbieLearning_Unity2D\Robbie\Library\PackageCache\com.unity.cinemachine@2.8.6\Runtime\ThirdParty\clipper_library.dll</HintPath>
+     </Reference>
      <Reference Include="netstandard">
      <HintPath>D:\Program Files\Editor\2021.3.4f1c1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
      </Reference>
@@ -835,6 +838,12 @@
      </Reference>
      <Reference Include="Unity.VisualScripting.State">
      <HintPath>D:\UnityProjects\RobbieLearning_Unity2D\Robbie\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+     </Reference>
+     <Reference Include="com.unity.cinemachine.editor">
+     <HintPath>D:\UnityProjects\RobbieLearning_Unity2D\Robbie\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Cinemachine">
+     <HintPath>D:\UnityProjects\RobbieLearning_Unity2D\Robbie\Library\ScriptAssemblies\Cinemachine.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>
