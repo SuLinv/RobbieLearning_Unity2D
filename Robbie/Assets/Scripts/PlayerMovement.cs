@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpHoldForce = 1.9f;
     public float jumpHoldDuration = 0.1f;
     public float crouchJumpBoost = 2.5f;
+    public float hangJumpForce = 15f;
 
     float jumpTime;
 
@@ -25,12 +26,17 @@ public class PlayerMovement : MonoBehaviour
     public bool isOnGround;
     public bool isJump;
     public bool isHeadBlocked;
+    public bool isHanging;
 
     [Header("环境检测")] 
     public LayerMask groundLayer;
     public float footOffset = 0.4f;
     public float headClearance = 0.5f;
     public float groundDistance = 0.2f;
+    private float playerHeight;
+    public float eyeHeight = 1.5f;
+    public float grapDistance = 0.4f; //悬挂时离墙壁的最远距离
+    public float reachOffset = 0.7f; //判断悬挂的从上往下的射线距离player的距离
     
     //碰撞体积
     private Vector2 collStandSize;
@@ -42,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
     private bool jumpPressed;
     private bool jumpHeld;
     private bool crouchHeld;
+    private bool crouchPressed;
 
     float xVelocity;
     // Start is called before the first frame update
@@ -49,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
+        playerHeight = coll.size.y;
         collStandSize = coll.size;
         collStandOffset = coll.offset;
         collCrouchSize = new Vector2(collStandSize.x, collStandSize.y * 0.5f);
@@ -62,8 +70,14 @@ public class PlayerMovement : MonoBehaviour
         {
             jumpPressed = true;
         }
+
+        if (Input.GetButton("Crouch"))
+        {
+            crouchPressed = true;
+        }
         jumpHeld = Input.GetButton("Jump");
         crouchHeld = Input.GetButton("Crouch");
+        
     }
 
     private void FixedUpdate()
@@ -86,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
             isOnGround = false;
         }
 
-        RaycastHit2D headCheck = Raycast(new Vector2(footOffset, coll.size.y), Vector2.up, headClearance, groundLayer);
+        RaycastHit2D headCheck = Raycast(new Vector2(0f, coll.size.y), Vector2.up, headClearance, groundLayer);
         if (headCheck)
         {
             isHeadBlocked = true;
@@ -95,10 +109,30 @@ public class PlayerMovement : MonoBehaviour
         {
             isHeadBlocked = false;
         }
+
+        float direction = transform.localScale.x;
+        Vector2 rayDirection = new Vector2(direction, 0f);
+        RaycastHit2D headHorizontalCheck = Raycast(new Vector2(footOffset*direction,playerHeight), rayDirection, grapDistance, groundLayer);
+        RaycastHit2D eyeHorizontalCheck = Raycast(new Vector2(footOffset*direction,eyeHeight), rayDirection, grapDistance, groundLayer);
+        RaycastHit2D hangDownCheck = Raycast(new Vector2(reachOffset * direction, playerHeight), Vector2.down,
+            grapDistance, groundLayer);
+        if (!isOnGround && rb.velocity.y < 0f && !headHorizontalCheck && eyeHorizontalCheck && hangDownCheck)
+        {
+            Vector3 pos = transform.position;
+            pos.x += (eyeHorizontalCheck.distance - 0.05f) * direction;
+            pos.y -= hangDownCheck.distance;
+            transform.position = pos;
+            rb.bodyType = RigidbodyType2D.Static;
+            isHanging = true;
+        }
     }
     
     void GroundMovement()
     {
+        if (isHanging)
+        {
+            return;
+        }
         if (crouchHeld && !isCrouch && isOnGround)
         {
             Crouch();
@@ -151,7 +185,24 @@ public class PlayerMovement : MonoBehaviour
 
     void MidAirMovement()
     {
-        if (jumpPressed && isOnGround && !isJump)
+        if (isHanging)
+        {
+            if (jumpPressed)
+            {
+                rb.bodyType = RigidbodyType2D.Dynamic;
+                rb.velocity = new Vector2(rb.velocity.x, hangJumpForce);
+                isHanging = false;
+                jumpPressed = false;
+            }
+
+            if (crouchPressed)
+            {
+                rb.bodyType = RigidbodyType2D.Dynamic;
+                isHanging = false;
+                crouchPressed = false;
+            }
+        }
+        if (jumpPressed && isOnGround && !isJump && !isHeadBlocked)
         {
             if (isCrouch)
             {
