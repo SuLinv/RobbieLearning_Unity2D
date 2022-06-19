@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("移动参数")] 
     public float speed = 8f;
     public float crouchSpeedDivisor = 3f;
+    public float xVelocity;
 
     [Header("跳跃参数")] 
     public float jumpForce = 6.3f;
@@ -49,8 +50,6 @@ public class PlayerMovement : MonoBehaviour
     private bool jumpHeld;
     private bool crouchHeld;
     private bool crouchPressed;
-
-    float xVelocity;
     // Start is called before the first frame update
     void Start()
     {

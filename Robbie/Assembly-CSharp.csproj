@@ -49,6 +49,7 @@
      <Compile Include="Assets\_Extended\Scripts\AutoSpikes.cs" />
      <Compile Include="Assets\Scripts\LightFlicker.cs" />
      <Compile Include="Assets\_Extended\Scripts\FallingBlock.cs" />
+     <Compile Include="Assets\Scripts\PlayerAnimation.cs" />
      <None Include="Assets\Addons\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\UI\Shaders\Fader.shader" />
      <None Include="Assets\Addons\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
@@ -335,11 +336,11 @@
      <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
      <HintPath>D:\UnityProjects\RobbieLearning_Unity2D\Robbie\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
      </Reference>
-     <Reference Include="Newtonsoft.Json">
-     <HintPath>D:\UnityProjects\RobbieLearning_Unity2D\Robbie\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
-     </Reference>
      <Reference Include="clipper_library">
      <HintPath>D:\UnityProjects\RobbieLearning_Unity2D\Robbie\Library\PackageCache\com.unity.cinemachine@2.8.6\Runtime\ThirdParty\clipper_library.dll</HintPath>
+     </Reference>
+     <Reference Include="Newtonsoft.Json">
+     <HintPath>D:\UnityProjects\RobbieLearning_Unity2D\Robbie\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
      </Reference>
      <Reference Include="netstandard">
      <HintPath>D:\Program Files\Editor\2021.3.4f1c1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
@@ -800,11 +801,17 @@
      <Reference Include="Unity.2D.IK.Runtime">
      <HintPath>D:\UnityProjects\RobbieLearning_Unity2D\Robbie\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
      </Reference>
+     <Reference Include="Cinemachine">
+     <HintPath>D:\UnityProjects\RobbieLearning_Unity2D\Robbie\Library\ScriptAssemblies\Cinemachine.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.Services.Core.Analytics">
      <HintPath>D:\UnityProjects\RobbieLearning_Unity2D\Robbie\Library\ScriptAssemblies\Unity.Services.Core.Analytics.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Burst">
      <HintPath>D:\UnityProjects\RobbieLearning_Unity2D\Robbie\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
+     </Reference>
+     <Reference Include="com.unity.cinemachine.editor">
+     <HintPath>D:\UnityProjects\RobbieLearning_Unity2D\Robbie\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Shared.Editor">
      <HintPath>D:\UnityProjects\RobbieLearning_Unity2D\Robbie\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
@@ -838,12 +845,6 @@
      </Reference>
      <Reference Include="Unity.VisualScripting.State">
      <HintPath>D:\UnityProjects\RobbieLearning_Unity2D\Robbie\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
-     </Reference>
-     <Reference Include="com.unity.cinemachine.editor">
-     <HintPath>D:\UnityProjects\RobbieLearning_Unity2D\Robbie\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Cinemachine">
-     <HintPath>D:\UnityProjects\RobbieLearning_Unity2D\Robbie\Library\ScriptAssemblies\Cinemachine.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>
