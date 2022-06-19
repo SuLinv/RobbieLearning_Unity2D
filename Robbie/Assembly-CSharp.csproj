@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\LightFlicker.cs" />
      <Compile Include="Assets\_Extended\Scripts\FallingBlock.cs" />
      <Compile Include="Assets\Scripts\PlayerAnimation.cs" />
+     <Compile Include="Assets\Scripts\AudioManage.cs" />
      <None Include="Assets\Addons\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\UI\Shaders\Fader.shader" />
      <None Include="Assets\Addons\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />

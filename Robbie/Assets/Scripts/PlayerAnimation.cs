@@ -36,4 +36,14 @@ public class PlayerAnimation : MonoBehaviour
         anim.SetBool(crouchID, playerMovement.isCrouch);
         anim.SetFloat(fallID,rb.velocity.y);
     }
+
+    public void StepAudio()
+    {
+        AudioManage.PlayFootStepAudio();
+    }
+
+    public void CrouchStepAudio()
+    {
+        AudioManage.PlayCrouchFootStepAudio();
+    }
 }

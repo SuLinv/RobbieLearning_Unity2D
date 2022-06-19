@@ -191,6 +191,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 rb.bodyType = RigidbodyType2D.Dynamic;
                 rb.velocity = new Vector2(rb.velocity.x, hangJumpForce);
+                AudioManage.PlayJumpAudio();
                 isHanging = false;
                 jumpPressed = false;
             }
@@ -215,6 +216,7 @@ public class PlayerMovement : MonoBehaviour
             jumpTime = Time.time + jumpHoldDuration;
             
             rb.AddForce(new Vector2(0f,jumpForce),ForceMode2D.Impulse);
+            AudioManage.PlayJumpAudio();
         }else if (isJump)
         {
             if (jumpHeld)
